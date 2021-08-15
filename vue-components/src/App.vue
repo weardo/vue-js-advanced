@@ -1,25 +1,19 @@
 <template>
 <div>
-  <NameList>
-    <template v-slot:default="slotProps">
-      {{slotProps.firstName}} {{slotProps.lastName}}
-    </template>
-  </NameList>
-  <NameList>
-    <template v-slot:default="slotProps">
-      {{slotProps.lastName}} {{slotProps.firstName}}
-    </template>
-  </NameList>
+  <h4>App Component Text</h4>
+  <ChildStyles> 
+    <h4>ChildStyles Component Text</h4>
+  </ChildStyles>  
 </div>
 </template>
 
 <script>
-import NameList from './components/NameList.vue'
+import ChildStyles from './components/ChildStyles.vue'
 
 export default {
   name: 'App',
   components: {
-    NameList
+    ChildStyles
   },
   data() {
     return { 
@@ -31,7 +25,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -41,9 +35,9 @@ export default {
   margin-top: 60px;
 }
 
-img {
-    max-width: 190px;
-    height: auto
+h4 {
+  color: red
 }
+
 
 </style>
