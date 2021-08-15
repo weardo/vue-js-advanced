@@ -1,18 +1,29 @@
 <template>
-  <Input v-model="name" />
+<div>
+  <NameList>
+    <template v-slot:default="slotProps">
+      {{slotProps.firstName}} {{slotProps.lastName}}
+    </template>
+  </NameList>
+  <NameList>
+    <template v-slot:default="slotProps">
+      {{slotProps.lastName}} {{slotProps.firstName}}
+    </template>
+  </NameList>
+</div>
 </template>
 
 <script>
-import Input from './components/Input.vue'
+import NameList from './components/NameList.vue'
 
 export default {
   name: 'App',
   components: {
-    Input,
+    NameList
   },
   data() {
     return { 
-      name: ''
+      
     }
   },
   methods: {
@@ -29,4 +40,10 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
 }
+
+img {
+    max-width: 190px;
+    height: auto
+}
+
 </style>
